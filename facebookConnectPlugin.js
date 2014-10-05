@@ -173,7 +173,7 @@ if (true) {
             console.log("launching FB SDK")
             var e = document.createElement('script');
             //e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
-            e.src =  '//connect.facebook.net/en_US/sdk.js';
+            e.src =  'http://connect.facebook.net/en_US/sdk.js';
             e.async = true;
             document.getElementById('fb-root').appendChild(e);
         }
