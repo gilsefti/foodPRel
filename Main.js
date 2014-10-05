@@ -73,9 +73,9 @@ mainApp.config(function ($stateProvider, $urlRouterProvider) {
           });
 
  
-    //$urlRouterProvider.otherwise('/FBLogin');
+    $urlRouterProvider.otherwise('/FBLogin');
     //$urlRouterProvider.otherwise('/Search');
     //$urlRouterProvider.otherwise('/new/location');
-    $urlRouterProvider.otherwise('/photo');
+    //$urlRouterProvider.otherwise('/photo');
 });
 
