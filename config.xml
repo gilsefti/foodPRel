@@ -14,7 +14,7 @@
   <content src="index.html" />
   <access origin="*" />
   <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
-  <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
+  <gap:plugin name="org.apache.cordova.facebook">
     <param name="APP_ID" value="509210995889450" />
     <param name="APP_NAME" value="Food share" />
   </gap:plugin>
