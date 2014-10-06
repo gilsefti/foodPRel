@@ -11,8 +11,34 @@
     <link rel="stylesheet" href="mobile-angular-ui/css/mobile-angular-ui-desktop.min.css">
     <link href="css/lunch.css" rel="stylesheet" />
 
+
+    <!--    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>-->
+
+    <title>Lunch box</title>
+</head>
+
+<body ng-app="Main" ng-controller="mainCtrl">
+
+    <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav nav-tabs">
+            <li ng-class="tabClass(tab)" ng-repeat="tab in tabs">
+                <a ui-sref="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div ui-view></div>
+    <div id="fb-root"></div>
+    <!-- cordova -->
+    <script src="cordova.js"></script>
+    <!-- cordova facebook plugin -->
+    <script src="cdv-plugin-fb-connect.js"></script>
+    <!-- facebook js sdk -->
+    <script src="facebook-js-sdk.js"></script>
+
     <script src="appconfig.js"></script>
- 
+
 
 
     <script src="js/angular.js"></script>
@@ -48,28 +74,6 @@
     <script src="AddTemplates/addLB.js"></script>
     <script src="AddTemplates/photo.js"></script>
     <script src="AddTemplates/fileLoad.js"></script>
-
-    <!--    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>-->
-
-    <title>Lunch box</title>
-</head>
-
-<body ng-app="Main" ng-controller="mainCtrl">
-
-    <nav class="navbar navbar-default" role="navigation">
-        <ul class="nav nav-tabs">
-            <li ng-class="tabClass(tab)" ng-repeat="tab in tabs">
-                <a ui-sref="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a>
-            </li>
-        </ul>
-    </nav>
-
-
-    <div ui-view></div>
-    <script src="cordova.js"></script>
-    <script src="cordova_plugins.js"></script>
-    <script src="facebookConnectPlugin.js"></script>
-
 </body>
 
 </html>
