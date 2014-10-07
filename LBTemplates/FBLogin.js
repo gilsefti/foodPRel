@@ -28,6 +28,19 @@ mainApp.controller('FBLoginCtrl', function ($scope, UserService, $state) {
           );
     }
 
+    function login() {
+        FB.login(
+            function (response) {
+                if (response.session) {
+                    alert('logged in');
+                } else {
+                    alert('not logged in');
+                }
+            }, {
+                scope: ""
+            }
+        );
+    }
 
     $scope.logout = function () {
         facebookConnectPlugin.logout(success, fail);
