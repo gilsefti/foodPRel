@@ -5,19 +5,17 @@ mainApp.controller('FBLoginCtrl', function ($scope, UserService, $state) {
             var appId = "509210995889450";//prompt("Enter FB Application ID", "");
             facebookConnectPlugin.browserInit(appId);
         }
-        var success = function (response) {
-            if (response.status === 'connected') {
-                $state.go("LB");              
-            }
+        var success = function () {           
+                $state.go("LB");  
         }
-        var fail = function (response) {
+        var fail = function () {
             alert("login failed")
         }
 
         //facebookConnectPlugin.login([], success, fail);
         FB.login(
               function (response) {
-                  if (response.session) {
+                  if (response.status === 'connected') {
                       success();
                   } else {
                       fail();
@@ -39,28 +37,15 @@ mainApp.controller('FBLoginCtrl', function ($scope, UserService, $state) {
         var fail = function (response) { alert("logout failed") }
     }
 });
-function login() {
-    FB.login(
-        function (response) {
-            if (response.session) {
-                alert('logged in');
-            } else {
-                alert('not logged in');
-            }
-        }, {
-            scope: ""
-        }
-    );
-}
 document.addEventListener('deviceready', function () {
     try {
-        alert('Device is ready! Make sure you set your app_id below this alert.');
+        //alert('Device is ready! Make sure you set your app_id below this alert.');
         FB.init({
             appId: "509210995889450",
             nativeInterface: CDV.FB,
             useCachedDialogs: false
         });
-        document.getElementById('data').innerHTML = "";
+    
     } catch (e) {
         alert(e);
     }
