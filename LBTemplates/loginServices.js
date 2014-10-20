@@ -34,7 +34,7 @@ loginServices.service('UserService', function (users, $q) {
                 success(response);
             }
             else
-                FB.api("me/", {},
+                facebookConnectPlugin.api("me/", {},
                     function (response) {
                         if (response.error)
                             task.reject();
