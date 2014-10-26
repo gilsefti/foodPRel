@@ -14,7 +14,7 @@ mainApp.controller('FBLoginCtrl', function ($scope, UserService, $state) {
             alert(JSON.stringify(response));
         }
 
-        facebookConnectPlugin.login([], success, fail);
+        facebookConnectPlugin.login(["email"], success, fail);
 
     }
 
