@@ -6,7 +6,7 @@ mainApp.controller('FBLoginCtrl', function ($scope, UserService, $state) {
             var appId = "509210995889450";//prompt("Enter FB Application ID", "");
             facebookConnectPlugin.browserInit(appId);
         }
-        var success = function () {
+        var success = function (response) {
             alert(JSON.stringify(response));
             $state.go("LB");
         }
