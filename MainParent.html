@@ -1,0 +1,8 @@
+﻿<nav class="navbar navbar-default" role="navigation">
+    <ul class="nav nav-tabs">
+        <li ng-class="tabClass(tab)" ng-repeat="tab in tabs">
+            <a ui-sref="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a>
+        </li>
+    </ul>
+</nav>
+<div ui-view></div>
